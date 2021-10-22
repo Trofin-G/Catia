@@ -1,0 +1,126 @@
+.NavbarItems{
+    background: #d247d8;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 19px;
+}
+
+.navbar-logo{
+    color: #fff;
+    justify-self: start;
+    margin-left: 20px;
+    cursor: pointer;
+}
+
+.fa-virus { margin-left: 8px; }
+
+.menu-icon{ display: none; }
+
+.fa-bars, .fa-times{ color:#fff; }
+
+.nav-menu{
+    display: flex;
+    list-style: none;
+    text-align: center;
+    width: 70vw;
+    justify-content: end;
+}
+
+.nav-link-active { background-color: #a525a7; }
+
+.nav-links{
+    color: #fff;
+    text-decoration: none;
+    padding: 8px 16px;
+}
+
+.nav-links:hover{
+    background-color: #791b7b;
+    color: #fff;
+    border-radius: 4px;
+    transition: all 0.2s ease-out;
+}
+
+.banner{
+    position: relative;
+    height: 340px;
+    width: 100%;
+    background: url('./img/banner.png');
+    background-size: cover;
+    background-position: center center;
+}
+
+.banner-info{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    text-align: center;
+}
+
+.banner-text{
+    position: relative;
+    font-size: 60px;
+    color: #fff;
+}
+    
+
+@media only screen and (max-width: 880px) {
+    .NavbarItems{
+        position: relative;
+    }
+
+    .navbar-logo{
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform: translate(25%, 55%);
+    }
+
+    .menu-icon{
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform: translate(100%, 25%);
+        font-size: 27px;
+        cursor: pointer;
+    }
+
+    .nav-menu{
+        display: flex;
+        flex-direction: column;
+        width: 70%;
+        padding-bottom: 100%;
+        position: absolute;
+        top: 60px;
+        left: -100%;
+        opacity: 1;
+        transition: all 0.5s ease;
+        z-index: 0;
+    }
+
+    .nav-menu.active{
+        background-color: #d247d8;
+        left: 0;
+        opacity: 1;
+        transition: all 0.5s ease;
+        z-index: 1;
+    }
+
+    .nav-links{
+        text-align: center;
+        padding: 24px;
+        width: 100%;
+        display: table;
+    }
+
+    .nav-links:hover{
+        background-color: #791b7b;
+        border-radius: 0;
+    } 
+
+    .banner-text{ font-size: 50px; }
+}
