@@ -4,7 +4,6 @@ import { Route, Switch } from 'react-router';
 import { NavLink } from 'react-router-dom';
 import { headerItems } from './HeaderItems';
 
-
 const Header = () => {
     
     const Routes = () => {

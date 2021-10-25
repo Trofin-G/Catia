@@ -9,7 +9,7 @@ import Symptoms from "./components/pages/Symptoms/Symptoms";
 import Header from "./components/UI/Header/Header";
 
 
-const App = () => {
+const Catia = () => {
     return(
         <BrowserRouter>
             <Header/>
@@ -21,5 +21,5 @@ const App = () => {
 }
 
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(<Catia />, document.getElementById('root'));
 

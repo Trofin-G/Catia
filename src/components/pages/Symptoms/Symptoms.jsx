@@ -1,5 +1,6 @@
 import './Symptoms.scss';
 import React from 'react';
+import { getSymptoms } from './symptomsService';
 
 const Symptoms = () => {
     return(
@@ -30,72 +31,14 @@ const Symptoms = () => {
                         </tr>
                     </thead>
                     <tbody>
-                        <tr className="odd-row">
-                            <th scope="row">Fever</th>
-                            <td>Rare</td>
-                            <td>Common</td>
-                            <td>Common</td>
-                        </tr>
-                        <tr className="even-row">
-                            <th scope="row">Cough</th>
-                            <td>Common</td>
-                            <td>Common</td>
-                            <td>Common</td>
-                        </tr>
-                        <tr className="odd-row">
-                            <th scope="row">Headache</th>
-                            <td>Sometimes</td>
-                            <td>Common</td>
-                            <td>Sometimes</td>
-                        </tr>
-                        <tr className="even-row">
-                            <th scope="row">Sore throat</th>
-                            <td>Common</td>
-                            <td>Sometimes</td>
-                            <td>Sometimes</td>
-                        </tr>
-                        <tr className="odd-row">
-                            <th scope="row">Runny or stuffy nose</th>
-                            <td>Common</td>
-                            <td>Sometimes</td>
-                            <td>Rare</td>
-                        </tr>
-                        <tr className="even-row">
-                            <th scope="row">Sneezing</th>
-                            <td>Common</td>
-                            <td>Sometimes</td>
-                            <td>Rare</td>
-                        </tr>
-                        <tr className="odd-row">
-                            <th scope="row">Aches & poins</th>
-                            <td>Sometimes</td>
-                            <td>Common</td>
-                            <td>Sometimes</td>
-                        </tr>
-                        <tr className="even-row">
-                            <th scope="row">Fatigue</th>
-                            <td>Sometimes</td>
-                            <td>Common</td>
-                            <td>Sometimes</td>
-                        </tr>
-                        <tr className="odd-row">
-                            <th scope="row">Loss of smell or taste</th>
-                            <td>Sometimes</td>
-                            <td>Sometimes</td>
-                            <td>Common</td>
-                        </tr>
-                        <tr className="even-row">
-                            <th scope="row">Shortness of breath</th>
-                            <td>Rare</td>
-                            <td>Rare</td>
-                            <td>Sometimes</td>
-                        </tr>
-                        <tr className="odd-row">
-                            <th scope="row">Diarrhea</th>
-                            <td>No</td>
-                            <td>Sometimes</td>
-                            <td>Sometimes</td>
-                        </tr>
+                        {getSymptoms().map(symptom =>(
+                            <tr key={symptom.id} className={symptom.id%2 == 0 ? 'even-row' : 'odd-row'}>
+                                <th scope="row">{symptom.typicalSymptom}</th>
+                                <td>{symptom.communCold}</td>
+                                <td>{symptom.flu}</td>
+                                <td>{symptom.coronaVirus}</td>
+                            </tr>
+                        ))}
                     </tbody>
                 </table>
             </div>
